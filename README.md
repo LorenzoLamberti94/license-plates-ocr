@@ -5,7 +5,7 @@ Author: *Lorenzo Lamberti* <lorenzo.lamberti@unibo.it>
         *Marco Fariselli* <marco.fariselli@greenwaves-technologies.com>
         *Francesco Paci* <francesco.paci@greenwaves-technologies.com>
         *Luca Benini* <lbenini@ethz.ch> -->
-        
+
 Copyright (C) 2021 ***GreenWaves Technologies*** &  ***Alma Mater Studiorum Bologna***. All rights reserved.
 
 ~~~~
@@ -54,8 +54,9 @@ Here is the illustration of the proposed pipeline:
 ## Validation Datasets
 
 I acquired 2 little validation datasets with the himax camera and GAP. There are about 50 chinese plates and 20 italian ones:
-- [Italian License Plates](./Licence-plate-recognition/dataset/my_dataset)
-- [Chinese License Plates](./Licence-plate-recognition/dataset/my_dataset_china)
+
+<!-- - [Italian License Plates](./Licence-plate-recognition/dataset/my_dataset)
+- [Chinese License Plates](./Licence-plate-recognition/dataset/my_dataset_china) -->
 
 I took pictures increasing distances (0-4 meters) as explaned in the following picture:
 

@@ -14,7 +14,7 @@ Take a look at the [Intel website](https://software.intel.com/content/www/us/en/
 - Application of LPRNet to real traffic surveillance video shows that our approach is robust enough to handle difficult cases, such as perspective and camera-dependent distortions, hard lighting conditions, change of viewpoint, and so on.
 
 <center>
-<img src="images/lprnet_flow.PNG" alt="lprnet_flow" style="width: 500px;"/>
+<img src="../images/lprnet_flow.PNG" alt="lprnet_flow" style="width: 500px;"/>
 </center>
 
 ### Training Dataset
@@ -29,7 +29,7 @@ Obs: To train the algorithm only the chatacter annotation (without position) is 
 
 **Example images:**
 
-![image](images/LP_recognition_dataset_examples.png)
+![image](../images/LP_recognition_dataset_examples.png) 
 
 ### Annotation files format
 
@@ -56,11 +56,12 @@ lp_recognition
   ├── config/  (where all the config files are)
   ├── frozen_graph/ (where frozen graphs are exported)
   ├── model/ (where training checkpoints are saved)
-  ├── pretrained_model/ (here i save final .ckpt file of the trained models)
+  ├── pre-trained/ (here i save final .ckpt file of the trained models)
   ├── utils/ (utilities to manipulate/create annotations of images)
+  ├── environment_lprnet.yml
   ├── eval_lpr.py (evaluation = test on images and return accuracy)
   ├── export_frozen_graph.py 
-  ├── infer_frozen_graph_single_image.py ((test if .pb frozen graph works))
+  ├── infer_frozen_graph_single_image.py (test if .pb frozen graph works)
   ├── infer_tflite_single_image.py (test if tflite model works)
   ├── test_lpr.py (script for testing = generation of image with characters on it)
   └── train_lpr.py (script for training)
@@ -68,9 +69,9 @@ lp_recognition
 
 - **train_lpr.py** : to train the model. saves .ckpt and tensorboard files in `model/` directory.
   
-- **test_lpr.py**: this testing script takes a pretrained model from `pretrained_models/` directory, perform inference on a testing dataset and finally generates images with predictions superimposed. No accuracy measures are generated with this script.
+- **test_lpr.py**: this testing script takes a pretrained model from `pre-trained/` directory, perform inference on a testing dataset and finally generates images with predictions superimposed. No accuracy measures are generated with this script.
   
-- **eval_lpr.py**: this evaluation script  takes a pretrained model from `pretrained_models/` directory, perform inference on an evaluation dataset and finally generates an accuracy measure. No images are generated with this script.
+- **eval_lpr.py**: this evaluation script  takes a pretrained model from `pre-trained/` directory, perform inference on an evaluation dataset and finally generates an accuracy measure. No images are generated with this script.
 
 - **utils/** : 
   - **create_files_list.py:** used to create a .txt file of annotations for test_lpr.py script (only annotation of the path of the images, no GT character information). 
@@ -122,13 +123,13 @@ How to setup the config/config_file.py file.
 - 
 ### Metrics
 
-We use accusacy as metric, defined as:
+We use LP-RR (License Plate Recognition Rate) as metric, defined as:
 
-$ Accuracy = \frac{Correct license plates}{Total n° of License Plates} $
+$ LP-RR = \frac{Correct\ license\ plates}{Total\ n°\ of\ License\ Plates} $
 
 A license plate is correct if all the characters are correctly recognized. Just one character mistaken means wrong recognition:
 
-![image](images/accuracy_lprnet.PNG)
+![image](../images/accuracy_lprnet.PNG)
 
 
 ### TensorBoard
@@ -144,3 +145,4 @@ Then open firefox and copy the http address that pops up. You will see:
 - **loss**: is the training loss
 - **optimization_loss**: same as "loss", is the training loss
 
+ 
