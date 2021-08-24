@@ -31,30 +31,26 @@ For example, you have to write again "polar bear" instead of "polar_bear".
 
 ### Prepare Workspace
 
-``` 
-tensorflow_api
- └─ models
-     ├── official
-     └── research
-            └── object_detection
-                  |     ...
-                  └── greenwaves
-                        ...
+```
+license-plates-ocr
+ └─ lp_detection
+     ├── configs/ (configuration files for training-evaluation)
+     ├── pre-trained/ (pre-trained models provided)
+     ├── trained-inference-graphs/
+     ├── training/ (where training checkpoints are saved)
+     |     └── config_file.config
+     ├── utils/ (dataset manipulation and TFRecords utils)
+     ├── environment_tensorflow1.15.yml
+     ├── environment_tensorflow2.1.yml
+     ├── export_inference_graph.py
+     ├── train_eval_model_main.py (main script for training and evaluation = printing mAP statistics)
+     ├── test_license_plate_detector.py (main script for generating output images)
+     └── README.md
 ```
 
-```
-greenwaves
-  ├── pretrained_models (store starting checkpoint for finetuning)
-  ├── training (where training checkpoints are saved)
-  |     └── config_file.config
-  ├── trained-inference-graphs (exported frozen graph)
-  ├── model_main.py (main script for training and evaluation)
-  └── export_inference_graph.py
-```
+- **pre-trained**: This folder will contain the pre-trained model of our choice, which can be used to evaluate over the dataset or they can be used as a starting checkpoint for our training job.
 
-- **pre-trained-model**: This folder will contain the pre-trained model of our choice, which shall be used as a starting checkpoint for our training job.
-
-- **training**: This folder will contain the training pipeline configuration file *.config, as well as a *.pbtxt label map file and all files generated during the training of our model by "model_main.py" script.
+- **training**: This folder will contain the training pipeline configuration file *.config, as well as a *.pbtxt label map file and all files generated during the training of our model by "train_eval_model_main.py" script.
 
 - **trained-inference-graphs**: this folder will contain the frozen graph exported by "export_inference_graph.py" script.
 
@@ -95,11 +91,11 @@ You can look at the [Tensorflow model zoo](https://github.com/tensorflow/models/
 
 ### Training
 
-Use the `model_main.py` script to train your model. It will save checkpoints and tensorflow events that will keep trace of the training process.
+Use the `train_eval_model_main.py` script to train your model. It will save checkpoints and tensorflow events that will keep trace of the training process.
 
 
 Example training command:
-```python model_main.py --pipeline_config_path=training/ssd_mobilenet_v2_oid_v4.config --model_dir=training/ --alsologtostderr ```
+```python train_eval_model_main.py --pipeline_config_path=config/ssd_mobilenet_v2_oid_v4.config --model_dir=training/ --alsologtostderr ```
 
 > **--model_dir** : where checkpoints ad tensorboard logs will be saved
 
@@ -140,7 +136,7 @@ where:
 
 Example testing command:
 
-```python model_main.py --pipeline_config_path=training/ssd_mobilenet_v2_oid_v4.config --checkpoint_dir=trained-inference-graphs/output_inference_graph_320x240.pb --run_once```
+```python train_eval_model_main.py --pipeline_config_path=config/ssd_mobilenet_v2_oid_v4.config --checkpoint_dir=trained-inference-graphs/output_inference_graph_320x240.pb --run_once```
 
 As output you will get the metrics selected, COCO metrics by default.
 
@@ -148,7 +144,7 @@ As output you will get the metrics selected, COCO metrics by default.
 
 #### 1. Set image size for trainig and testing
 
-In `training/config_file.config` set these (self explanatory) parameters: 
+In `config/config_file.config` set these (self explanatory) parameters: 
 
 ```     
 model {
@@ -165,7 +161,7 @@ model {
 
 #### 2. Freeze backbone at training time
 
-In `training/config_file.config` set this parameter: 
+In `config/config_file.config` set this parameter: 
 
 ```     
 train_config: {
@@ -177,7 +173,7 @@ train_config: {
 
 #### 3. how to quantize
 
-In `training/config_file.config` set these parameters: 
+In `config/config_file.config` set these parameters: 
 
 ```     
 graph_rewriter {
@@ -191,7 +187,7 @@ graph_rewriter {
 
 #### 4. Set learing rate exponential decay
 
-In `training/config_file.config` set these parameters: 
+In `config/config_file.config` set these parameters: 
 
 ```     
 train_config: {
@@ -214,7 +210,7 @@ train_config: {
 > **decay_steps**: how many steps before decreasing the learning rate
 > **decay_factor: 0.95**: the final learning rate will be the 95% of the original
 
-![image](images/exponential_decay_example.png)
+![image](../images/exponential_decay_example.png)
 
 #### 5. Print trainable variables
 
@@ -240,22 +236,4 @@ Note: find the names of `--input_arrays` and `--output_arrays` opening the  `gra
 
 ![image](images/netron.PNG)
 
-
-
-
-<!-- 
-SCALETTA:
-- scaricare dataset
-- generare tfrecord
-  
-- come bloccare backbone
-- come stampare tutte le variabili trainabili
-- settare size
-- come quantizzare
-- settare exp decay
-  
-- settare tutti i path ai file (finetune checkpoint, tfrecords, label maps), il numero diclassi
-- generare il file label map
-- analize ckpt file con tensorflow repo
-
-- STATO DELL'arte EXCEL file che ho fatto un mese fa -->
+ 
