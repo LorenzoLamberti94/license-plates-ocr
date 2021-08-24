@@ -22,15 +22,15 @@
 ~~~~
 
 
-## ISCAS 2021 Presentation [Video](http://www.youtube.com/watch?v=Y-ov2i0wuTA)
+### ISCAS 2021 Presentation [Video](http://www.youtube.com/watch?v=Y-ov2i0wuTA)
 
 
-[![YouTube Link](http://img.youtube.com/vi/Y-ov2i0wuTA/0.jpg)](http://www.youtube.com/watch?v=Y-ov2i0wuTA "YouTube Link")
+<!-- [![YouTube Link](http://img.youtube.com/vi/Y-ov2i0wuTA/0.jpg)](http://www.youtube.com/watch?v=Y-ov2i0wuTA "YouTube Link") -->
 
 
 
 
-## License Plate Detection and Text Recognition on GAP 
+# License Plate Detection and Text Recognition on GAP 
 
 
 This is a two stage lightweight and robust license plate recognition based on SSD and LPRNet and implemented Tensorflow.
