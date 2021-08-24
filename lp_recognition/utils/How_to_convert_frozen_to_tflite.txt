@@ -1,0 +1,15 @@
+
+# How to export a quantized model (this fuses fakequant layers in the network!):
+
+    #input NOT symmetric ([0,1] range)
+    tflite_convert --graph_def_file=graph.pb --output_file=graph.tflite --input_arrays=input --output_arrays=Squeeze --inference_type=QUANTIZED_UINT8 --mean_values=0 --std_dev_values=255
+
+    #input SYMMETRIC ([-1,1] range)
+    tflite_convert --graph_def_file=graph.pb --output_file=graph.tflite --input_arrays=input --output_arrays=Squeeze --inference_type=QUANTIZED_UINT8 --mean_values=128 --std_dev_values=127
+
+
+#You can simulate quantization for non-quantized models with following command:
+
+    tflite_convert --graph_def_file=graph.pb --output_file=graph.tflite --input_arrays=input --output_arrays=Squeeze --inference_type=QUANTIZED_UINT8 --mean_values=0 --std_dev_values=255 --default_ranges_min=0 --default_ranges_max=6
+
+
