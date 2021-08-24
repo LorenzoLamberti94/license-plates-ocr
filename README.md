@@ -5,6 +5,7 @@ Author: *Lorenzo Lamberti* <lorenzo.lamberti@unibo.it>
         *Marco Fariselli* <marco.fariselli@greenwaves-technologies.com>
         *Francesco Paci* <francesco.paci@greenwaves-technologies.com>
         *Luca Benini* <lbenini@ethz.ch> -->
+        
 Copyright (C) 2021 ***GreenWaves Technologies*** &  ***Alma Mater Studiorum Bologna***. All rights reserved.
 
 ~~~~
