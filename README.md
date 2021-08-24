@@ -1,13 +1,14 @@
-# Low-Power License Plate Detection and Recognition on a RISC-V Multi-Core MCU-based Vision System ([ISCAS2021](https://iscas2021.org]))
+# Low-Power License Plate Detection and Recognition on a RISC-V Multi-Core MCU-based Vision System (ISCAS2021) ([Paper](https://ieeexplore.ieee.org/document/9401730))
 
-Author: *Lorenzo Lamberti* <lorenzo.lamberti@unibo.it>
-        <!-- *Manuele Rusci* <manuele.rusci@unibo.it>
-        *Marco Fariselli* <marco.fariselli@greenwaves-technologies.com>
-        *Francesco Paci* <francesco.paci@greenwaves-technologies.com>
-        *Luca Benini* <lbenini@ethz.ch> -->
+        
+*Copyright (C) 2021 GreenWaves Technologies &  Alma Mater Studiorum Bologna. All rights reserved.*
 
-Copyright (C) 2021 ***GreenWaves Technologies*** &  ***Alma Mater Studiorum Bologna***. All rights reserved.
-
+**Authors:** *Lorenzo Lamberti* *(<lorenzo.lamberti@unibo.it>)*,
+        *Manuele Rusci*,
+        *Marco Fariselli*,
+        *Francesco Paci*,
+        *Luca Benini*.
+        
 ~~~~
 @INPROCEEDINGS{lamberti2021lowpowerocrISCAS,
   author={Lamberti, Lorenzo and Rusci, Manuele and Fariselli, Marco and Paci, Francesco and Benini, Luca},
@@ -19,6 +20,15 @@ Copyright (C) 2021 ***GreenWaves Technologies*** &  ***Alma Mater Studiorum Bolo
   pages={1-5},
   doi={10.1109/ISCAS51556.2021.9401730}}
 ~~~~
+
+
+## ISCAS 2021 Presentation [Video](http://www.youtube.com/watch?v=Y-ov2i0wuTA)
+
+
+[![YouTube Link](http://img.youtube.com/vi/Y-ov2i0wuTA/0.jpg)](http://www.youtube.com/watch?v=Y-ov2i0wuTA "YouTube Link")
+
+
+
 
 ## License Plate Detection and Text Recognition on GAP 
 
@@ -54,9 +64,8 @@ Here is the illustration of the proposed pipeline:
 ## Validation Datasets
 
 I acquired 2 little validation datasets with the himax camera and GAP. There are about 50 chinese plates and 20 italian ones:
-
-<!-- - [Italian License Plates](./Licence-plate-recognition/dataset/my_dataset)
-- [Chinese License Plates](./Licence-plate-recognition/dataset/my_dataset_china) -->
+- [Italian License Plates](./Licence-plate-recognition/dataset/my_dataset)
+- [Chinese License Plates](./Licence-plate-recognition/dataset/my_dataset_china)
 
 I took pictures increasing distances (0-4 meters) as explaned in the following picture:
 
