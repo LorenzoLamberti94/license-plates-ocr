@@ -22,7 +22,8 @@
 ~~~~
 
 
-### ISCAS 2021 Presentation [Video](http://www.youtube.com/watch?v=Y-ov2i0wuTA)
+### Video Presentation: [ISCAS 2021](http://www.youtube.com/watch?v=Y-ov2i0wuTA)
+### Tutorial: [Jupyter Notebook](license-plate-ocr-tutorial.ipynb)
 
 
 <!-- [![YouTube Link](http://img.youtube.com/vi/Y-ov2i0wuTA/0.jpg)](http://www.youtube.com/watch?v=Y-ov2i0wuTA "YouTube Link") -->
