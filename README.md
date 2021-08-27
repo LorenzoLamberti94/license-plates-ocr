@@ -64,8 +64,8 @@ Here is the illustration of the proposed pipeline:
 ## Validation Datasets
 
 I acquired 2 little validation datasets with the himax camera and GAP. There are about 50 chinese plates and 20 italian ones.
-<!-- - [Italian License Plates](./Licence-plate-recognition/dataset/my_dataset)
-- [Chinese License Plates](./Licence-plate-recognition/dataset/my_dataset_china) -->
+- [Italian License Plates](./dataset/himax_dataset/italian_dataset) _(dataset currently not available for privacy reasons)_
+- [Chinese License Plates](./dataset/himax_dataset/chinese_dataset) _(dataset currently not available for privacy reasons)_
 
 I took pictures increasing distances (0-4 meters) as explaned in the following picture:
 
