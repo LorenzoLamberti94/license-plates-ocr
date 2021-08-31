@@ -121,7 +121,6 @@ cp -r pycocotools/ ../../tensorflow-api/research/
 
 
 ## Setup
-Download my pretrained models for both recognition and detection in my [Google Drive](https://drive.google.com/open?id=1LCI-aRiPJ1Ez3BEYVcF8zVXTe4isMNbG) .
 
 create the three conda environment that are needed for running the scripts:
 ```
