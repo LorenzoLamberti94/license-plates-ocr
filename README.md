@@ -88,7 +88,7 @@ The [Jupyter Notebook Tutorial](license-plate-ocr-tutorial.ipynb) unifies both s
 
 The code is based on two gibhub repositories, check them to have more information:
 - [Tensorflow API for Object Detection](https://github.com/tensorflow/models/tree/master/research/object_detection)
-- [Intel Openvino training extension - License Plate Recognition](https://github.com/openvinotoolkit/training_extensions/tree/develop/misc/tensorflow_toolkit/lpr)
+- [Intel Openvino training extension - License Plate Recognition](https://github.com/openvinotoolkit/training_extensions/tree/misc/misc/tensorflow_toolkit/lpr)
 
 ## Submodules setup
 Make sure to clone recoursively (so that submodules are downloaded) and to switch to older compatible commits of the submodules (tested and working)
