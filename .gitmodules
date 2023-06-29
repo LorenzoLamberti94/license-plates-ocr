@@ -1,3 +1,9 @@
 [submodule "deployment"]
 	path = deployment
 	url = git@github.com:GreenWaves-Technologies/licence_plate_recognition.git
+[submodule "external/tensorflow-api"]
+	path = external/tensorflow-api
+	url = git@github.com:tensorflow/models.git
+[submodule "external/LPRNet"]
+	path = external/LPRNet
+	url = https://github.com/openvinotoolkit/training_extensions
