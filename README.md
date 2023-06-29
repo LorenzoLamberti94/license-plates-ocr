@@ -24,7 +24,7 @@
 
 ### Video Presentation: [ISCAS 2021](http://www.youtube.com/watch?v=Y-ov2i0wuTA)
 ### Tutorial: [Jupyter Notebook](license-plate-ocr-tutorial.ipynb)
-
+### See GreenWaves Technologies GitHub for [deployment on GAP8](https://github.com/GreenWaves-Technologies/licence_plate_recognition)
 
 <!-- [![YouTube Link](http://img.youtube.com/vi/Y-ov2i0wuTA/0.jpg)](http://www.youtube.com/watch?v=Y-ov2i0wuTA "YouTube Link") -->
 
