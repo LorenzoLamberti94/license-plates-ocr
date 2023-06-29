@@ -1,0 +1,3 @@
+[submodule "deployment"]
+	path = deployment
+	url = git@github.com:GreenWaves-Technologies/licence_plate_recognition.git
