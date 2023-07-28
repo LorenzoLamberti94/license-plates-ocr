@@ -145,4 +145,16 @@ Then open firefox and copy the http address that pops up. You will see:
 - **loss**: is the training loss
 - **optimization_loss**: same as "loss", is the training loss
 
- 
+
+### Quatization
+You need to quantize your model for deploying it on GAP8.
+
+Make shure you trained a model with quantization active: `quantization_aware=True` in the config file.
+
+Then run these commands to quantize and generate a tflite file:
+
+```
+python export_frozen_graph.py config/xxx.py --output_dir frozen_graph_60000 --checkpoint ./training/model/model.ckpt-60000.ckpt
+mv graph.pb.frozen graph.pb #rename
+tflite_convert --graph_def_file=graph.pb --output_file=graph.tflite --input_arrays=input --output_arrays=Squeeze --inference_type=QUANTIZED_UINT8 --mean_values=128 --std_dev_values=127
+``` 
