@@ -236,4 +236,29 @@ Note: find the names of `--input_arrays` and `--output_arrays` opening the  `gra
 
 ![image](images/netron.PNG)
 
+
+### Quantization
+
+
+**1. Start QAT finetuning with main script:**
+
+See in configs/ssd_mobilenet_v2_oid_v4.config when the QAT starts (after the delay)
+
+```
+python train_eval_model_main.py --model_dir=./training/ --num_train_steps=55000 --pipeline_config_path=configs/ssd_mobilenet_v2_oid_v4.config --alsologtostderr
+```
+
+**2. Export frozen graph:**
+
+```
+python lp_detection/export_tflite_ssd_graph.py --trained_checkpoint_prefix ./lp_detection/trainings/model.ckpt-55000 --output_directory ./lp_detection/tflite_output --pipeline_config_path ./lp_detection/configs/ssd_mobilenet_v2_oid_v4.config
+```
+
+**3. Convert to tflite:**
+
+```
+cd lp_detection/tflite_output
+tflite_convert --graph_def_file=tflite_graph.pb --output_file=graph.tflite --inference_type=QUANTIZED_UINT8 --input_arrays=normalized_input_image_tensor --output_arrays=TFLite_Detection_PostProcess,TFLite_Detection_PostProcess:1,TFLite_Detection_PostProcess:2,TFLite_Detection_PostProcess:3 --mean_values=128 --std_dev_values=127.5 --input_shapes=1,240,320,3 --allow_custom_ops --inference_input_type=QUANTIZED_UINT8
+```
+
  
